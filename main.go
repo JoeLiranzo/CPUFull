@@ -6,7 +6,7 @@ import (
 	"time"
 )
 
-func Process(seconds int) {
+func Process(seconds int8) {
 	done := make(chan int)
 
 	for i := 0; i < runtime.NumCPU(); i++ {
@@ -26,10 +26,13 @@ func Process(seconds int) {
 }
 
 func main() {
-	var seconds string
+	var seconds int8
 
-	fmt.Printf("Digite el tiempo en segundos")
-	fmt.Scanf("%s", &seconds)
+	fmt.Print("Digite el tiempo en segundos: ")
+	fmt.Scanf("%d", &seconds)
 
-	fmt.Printf("Time in seconds: %s", seconds)
+	fmt.Println("Processing...")
+	Process(seconds)
+
+	fmt.Printf("Processed in : %d seconds", seconds)
 }
