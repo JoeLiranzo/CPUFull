@@ -35,4 +35,5 @@ func main() {
 	Process(seconds)
 
 	fmt.Printf("Processed in : %d seconds", seconds)
+	fmt.Scanln()
 }
